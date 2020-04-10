@@ -1,21 +1,20 @@
-from flask import Flask, render_template, request, jsonify
-from PIL import Image
-import numpy as np
-import cv2
-
+from flask import *
 
 app = Flask(__name__)
 
 
-@app.route('/maskImage', methods=['POST'])
-def mask_image():
-    file = request.files['image'].read()
-    print(file)
-    nparr = np.frombuffer(file, np.uint8)
-    img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-    cv2.imwrite("received.png", img)
-    return jsonify({'status': "received"})
+@app.route('/')
+def upload():
+    return render_template("file_upload_form.html")
+
+
+@app.route('/image', methods=['POST'])
+def success():
+    if request.method == 'POST':
+        f = request.files['file']
+        f.save("received.png")
+        return render_template("success.html", name=f.filename)
 
 
 if __name__ == '__main__':
-	app.run(host="192.168.1.100", port= 5000)
+    app.run(host = "192.168.1.100", debug=True, port=5000)
