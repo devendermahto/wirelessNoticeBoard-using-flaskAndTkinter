@@ -3,9 +3,18 @@
     <title>upload</title>
 </head>
 <body>
-    <form action = "/image" method = "post" enctype="multipart/form-data">
-        <input type="file" name="file" />
-        <input type = "submit" value="Upload">
+    <h1><center>Wireless Noticeboard by Pravesh</center></h1>
+    <form action="/image" method = "post" enctype="multipart/form-data">
+        <center>
+            <input type="file" style= "width: 300px" name="file"/>
+            <input type= "submit" value="Upload">
+        </center>
+    </form>
+    <form action="/text" method="post" enctype="multipart/form-data">
+        <center>
+            <input name="text" type="text"/>
+            <input type="submit" value="Upload">
+        </center>
     </form>
 </body>
 </html>
