@@ -1,6 +1,10 @@
 # wirelessNoticeBoard-using-flaskAndTkinter
 Simple wireless noticeboard using flask and Tkinter.
 
+It uses flask API to receive images and display it using tkinter GUI.
+
+To send image file a crude html page is used that can be accessible using IP address.
+
 
 ## Steps:
 
