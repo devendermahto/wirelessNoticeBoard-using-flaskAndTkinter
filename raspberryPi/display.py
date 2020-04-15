@@ -2,7 +2,8 @@ from tkinter import *
 from PIL import ImageTk,Image
 import cv2
 
-class app():
+
+class App:
 
     def __init__(self):
         self.w, self.h = root.winfo_screenwidth(), root.winfo_screenheight()
@@ -29,5 +30,5 @@ class app():
 
 if __name__ == "__main__":
     root = Tk()
-    app = app()
+    app = App()
     root.mainloop()
